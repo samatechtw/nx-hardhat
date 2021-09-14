@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "projects": {
+    "hardhat": {
+      "root": "packages/hardhat",
+      "sourceRoot": "packages/hardhat/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["packages/hardhat/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/hardhat"],
+          "options": {
+            "jestConfig": "packages/hardhat/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/hardhat",
+            "tsConfig": "packages/hardhat/tsconfig.lib.json",
+            "packageJson": "packages/hardhat/package.json",
+            "main": "packages/hardhat/src/index.ts",
+            "assets": [
+              "packages/hardhat/*.md",
+              {
+                "input": "./packages/hardhat/src",
+                "glob": "**/!(*.ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/hardhat/src",
+                "glob": "**/*.d.ts",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/hardhat",
+                "glob": "generators.json",
+                "output": "."
+              },
+              {
+                "input": "./packages/hardhat",
+                "glob": "executors.json",
+                "output": "."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "hardhat-e2e": {
+      "root": "e2e/hardhat-e2e",
+      "projectType": "application",
+      "sourceRoot": "e2e/hardhat-e2e/src",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/nx-plugin:e2e",
+          "options": {
+            "target": "hardhat:build",
+            "jestConfig": "e2e/hardhat-e2e/jest.config.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  }
+}

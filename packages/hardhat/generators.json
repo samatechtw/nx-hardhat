@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "hardhat",
+  "version": "0.0.1",
+  "generators": {
+    "hardhat": {
+      "factory": "./src/generators/hardhat/generator",
+      "schema": "./src/generators/hardhat/schema.json",
+      "description": "hardhat generator"
+    }
+  }
+}
