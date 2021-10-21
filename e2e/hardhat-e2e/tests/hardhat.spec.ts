@@ -8,8 +8,8 @@ import {
 describe('hardhat e2e', () => {
   it('should create hardhat', async () => {
     const plugin = uniq('hardhat');
-    ensureNxProject('@nx-hardhat/hardhat', 'dist/packages/hardhat');
-    await runNxCommandAsync(`generate @nx-hardhat/hardhat:hardhat ${plugin}`);
+    ensureNxProject('nx-hardhat', 'dist/packages/hardhat');
+    await runNxCommandAsync(`generate nx-hardhat:hardhat ${plugin}`);
 
     const result = await runNxCommandAsync(`build ${plugin}`);
     expect(result.stdout).toContain('Executor ran');
@@ -18,9 +18,9 @@ describe('hardhat e2e', () => {
   describe('--directory', () => {
     it('should create src in the specified directory', async () => {
       const plugin = uniq('hardhat');
-      ensureNxProject('@nx-hardhat/hardhat', 'dist/packages/hardhat');
+      ensureNxProject('nx-hardhat', 'dist/packages/hardhat');
       await runNxCommandAsync(
-        `generate @nx-hardhat/hardhat:hardhat ${plugin} --directory subdir`
+        `generate nx-hardhat:hardhat ${plugin} --directory subdir`
       );
       expect(() =>
         checkFilesExist(`libs/subdir/${plugin}/src/index.ts`)
@@ -31,9 +31,9 @@ describe('hardhat e2e', () => {
   describe('--tags', () => {
     it('should add tags to nx.json', async () => {
       const plugin = uniq('hardhat');
-      ensureNxProject('@nx-hardhat/hardhat', 'dist/packages/hardhat');
+      ensureNxProject('nx-hardhat', 'dist/packages/hardhat');
       await runNxCommandAsync(
-        `generate @nx-hardhat/hardhat:hardhat ${plugin} --tags e2etag,e2ePackage`
+        `generate nx-hardhat:hardhat ${plugin} --tags e2etag,e2ePackage`
       );
       const nxJson = readJson('nx.json');
       expect(nxJson.projects[plugin].tags).toEqual(['e2etag', 'e2ePackage']);

@@ -63,7 +63,7 @@ export default async function (tree: Tree, options: HardhatGeneratorSchema) {
     sourceRoot: `${normalizedOptions.projectRoot}/src`,
     targets: {
       build: {
-        executor: '@nx-hardhat/hardhat:build',
+        executor: 'nx-hardhat:build',
       },
     },
     tags: normalizedOptions.parsedTags,
