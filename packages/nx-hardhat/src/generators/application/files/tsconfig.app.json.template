@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": false,
+    "outDir": "<%= offsetFromRoot %>dist/out-tsc",
+    "types": ["node"],
+    "module": "commonjs",
+    "target": "es2020"
+  },
+  "files": ["./hardhat.config.ts"],
+  "include": ["./scripts"]
+}

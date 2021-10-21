@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "nx-hardhat/hardhat": ["packages/hardhat/src/index.ts"]
+      "nx-hardhat/hardhat": ["packages/nx-hardhat/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

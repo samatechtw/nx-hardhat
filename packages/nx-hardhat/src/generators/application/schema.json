@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "cli": "nx",
   "$id": "Hardhat",
-  "title": "",
+  "title": "Hardhat app",
   "type": "object",
   "properties": {
     "name": {
@@ -13,6 +13,10 @@
         "index": 0
       },
       "x-prompt": "What name would you like to use?"
+    },
+    "title": {
+      "type": "string",
+      "description": "Project title - the human readable app name"
     },
     "tags": {
       "type": "string",

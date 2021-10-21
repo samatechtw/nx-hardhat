@@ -1,23 +1,23 @@
 {
   "version": 2,
   "projects": {
-    "hardhat": {
-      "root": "packages/hardhat",
-      "sourceRoot": "packages/hardhat/src",
+    "nx-hardhat": {
+      "root": "packages/nx-hardhat",
+      "sourceRoot": "packages/nx-hardhat/src",
       "projectType": "library",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": ["packages/hardhat/**/*.ts"]
+            "lintFilePatterns": ["packages/nx-hardhat/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/hardhat"],
+          "outputs": ["coverage/packages/nx-hardhat"],
           "options": {
-            "jestConfig": "packages/hardhat/jest.config.js",
+            "jestConfig": "packages/nx-hardhat/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -25,29 +25,29 @@
           "executor": "@nrwl/node:package",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/packages/hardhat",
-            "tsConfig": "packages/hardhat/tsconfig.lib.json",
-            "packageJson": "packages/hardhat/package.json",
-            "main": "packages/hardhat/src/index.ts",
+            "outputPath": "dist/packages/nx-hardhat",
+            "tsConfig": "packages/nx-hardhat/tsconfig.lib.json",
+            "packageJson": "packages/nx-hardhat/package.json",
+            "main": "packages/nx-hardhat/src/index.ts",
             "assets": [
-              "packages/hardhat/*.md",
+              "packages/nx-hardhat/*.md",
               {
-                "input": "./packages/hardhat/src",
+                "input": "./packages/nx-hardhat/src",
                 "glob": "**/!(*.ts)",
                 "output": "./src"
               },
               {
-                "input": "./packages/hardhat/src",
+                "input": "./packages/nx-hardhat/src",
                 "glob": "**/*.d.ts",
                 "output": "./src"
               },
               {
-                "input": "./packages/hardhat",
+                "input": "./packages/nx-hardhat",
                 "glob": "generators.json",
                 "output": "."
               },
               {
-                "input": "./packages/hardhat",
+                "input": "./packages/nx-hardhat",
                 "glob": "executors.json",
                 "output": "."
               }
@@ -56,16 +56,16 @@
         }
       }
     },
-    "hardhat-e2e": {
-      "root": "e2e/hardhat-e2e",
+    "nx-hardhat-e2e": {
+      "root": "e2e/nx-hardhat-e2e",
       "projectType": "application",
-      "sourceRoot": "e2e/hardhat-e2e/src",
+      "sourceRoot": "e2e/nx-hardhat-e2e/src",
       "targets": {
         "e2e": {
           "executor": "@nrwl/nx-plugin:e2e",
           "options": {
             "target": "hardhat:build",
-            "jestConfig": "e2e/hardhat-e2e/jest.config.js"
+            "jestConfig": "e2e/nx-hardhat-e2e/jest.config.js"
           }
         }
       }

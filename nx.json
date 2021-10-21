@@ -27,12 +27,12 @@
     ]
   },
   "projects": {
-    "hardhat": {
+    "nx-hardhat": {
       "tags": []
     },
-    "hardhat-e2e": {
+    "nx-hardhat-e2e": {
       "tags": [],
-      "implicitDependencies": ["hardhat"]
+      "implicitDependencies": ["nx-hardhat"]
     }
   },
   "workspaceLayout": {

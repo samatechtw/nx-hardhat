@@ -18,7 +18,7 @@ npx create-nx-plugin <org> --pluginName <plugin>
 
 ## Plugin Usage
 
-Instructions for using the plugin in an Nx workspace are [here](./packages/hardhat)
+Instructions for using the plugin in an Nx workspace are [here](./packages/nx-hardhat)
 
 ## Plugin Development
 
