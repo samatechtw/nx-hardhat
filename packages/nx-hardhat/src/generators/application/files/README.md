@@ -9,49 +9,49 @@ Generated via [`nx-hardhat`](https://github.com/samatechtw/nx-hardhat)
 **Compile contracts** (see [Environment](#environment))
 
 ```bash
-$ npx nx compile nft
+$ npx nx compile contracts
 ```
 
 **Run tests**
 
 ```bash
-$ npx nx test nft
+$ npx nx test contracts
 
 # With coverage
-$ npx nx test-coverage nft
+$ npx nx test-coverage contracts
 ```
 
 **Lint**
 
 ```bash
 # Tests and config files (JS/TS)
-$ npx nx lint nft
+$ npx nx lint contracts
 
 # Contracts
-$ npx nx lint-solidity nft
+$ npx nx lint-solidity contracts
 ```
 
 **Hardhat local blockchain node**
 
 ```bash
-$ npx nx dev nft
+$ npx nx dev contracts
 ```
 
 **Deploy**
 
 ```bash
 # To local node
-$ npx nx deploy-dev nft
+$ npx nx deploy contracts
 
 # To Ropsten testnet (needs "ROPSTEN_X" env vars)
-$ npx nx deploy-testnet nft
+$ npx nx deploy --network testnet contracts
 ```
 
 **Misc**
 
 ```sh
 # Clear cache and delete all artifacts
-$ npx nx clean nft
+$ npx nx clean contracts
 ```
 
 ## Environment

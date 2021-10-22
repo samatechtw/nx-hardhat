@@ -8,7 +8,7 @@ const getFactories = async () => {
 const deployContracts = async ({
   erc20Factory,
 }) => {
-  const erc20 = await erc20Factory.deploy('Test ERC20', 'T20', 18)
+  const erc20 = await erc20Factory.deploy('Test ERC20', 'T20')
   return { erc20 }
 }
 

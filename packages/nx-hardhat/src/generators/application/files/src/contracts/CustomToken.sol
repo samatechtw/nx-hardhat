@@ -9,7 +9,7 @@ import "./library/ERC20.sol";
 /// @notice Custom ERC20 token
 contract CustomToken is Ownable, ERC20 {
 
-	constructor(
+    constructor(
         string memory name,
         string memory symbol,
         uint256 initialSupply,

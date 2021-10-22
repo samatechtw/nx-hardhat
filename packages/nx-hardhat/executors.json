@@ -5,6 +5,32 @@
       "implementation": "./src/executors/build/executor",
       "schema": "./src/executors/build/schema.json",
       "description": "build executor"
+    },
+    "test": {
+      "implementation": "./src/executors/test/executor",
+      "schema": "./src/executors/test/schema.json",
+      "description": "test executor"
+    },
+    "check": {
+      "implementation": "./src/executors/check/executor",
+      "schema": "./src/executors/check/schema.json",
+      "description": "check executor"
+    },
+    "deploy": {
+      "implementation": "./src/executors/deploy/executor",
+      "schema": "./src/executors/deploy/schema.json",
+      "description": "deploy executor"
+    },
+    "node": {
+      "implementation": "./src/executors/node/executor",
+      "schema": "./src/executors/node/schema.json",
+      "description": "node executor",
+      "aliases": ["dev"]
+    },
+    "clean": {
+      "implementation": "./src/executors/clean/executor",
+      "schema": "./src/executors/clean/schema.json",
+      "description": "clean executor"
     }
   }
 }

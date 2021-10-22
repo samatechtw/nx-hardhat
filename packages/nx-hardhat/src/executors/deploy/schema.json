@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "Deploy executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "script": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "default": "src/scripts/deploy.ts"
+    },
+    "network": {
+      "type": "string",
+      "description": "Deploy network target",
+      "default": "localhost"
+    }
+  },
+  "required": []
+}

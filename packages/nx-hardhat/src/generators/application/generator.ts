@@ -109,11 +109,23 @@ export default async function (host: Tree, options: AppGeneratorSchema) {
         executor: 'nx-hardhat:test',
         outputs: [joinPathFragments('coverage', projectRoot)],
       },
-      lint: {
-        executor: 'nx-hardhat:lint',
+      check: {
+        executor: 'nx-hardhat:check',
       },
-      format: {
-        executor: 'nx-hardhat:format',
+      deploy: {
+        executor: 'nx-hardhat:deploy',
+      },
+      dev: {
+        executor: 'nx-hardhat:node',
+      },
+      clean: {
+        executor: 'nx-hardhat:clean',
+      },
+      lint: {
+        executor: '@nrwl/linter:eslint',
+        options: {
+          lintFilePatterns: [`${projectRoot}/**/*.{js,ts}`],
+        },
       },
     },
     tags: normalizedOptions.parsedTags,

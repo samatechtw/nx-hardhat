@@ -4,7 +4,7 @@ pragma solidity 0.8.9;
 /// @title Ownable
 /// @dev The Ownable contract provides methods for single contract ownership
 contract Ownable {
-    address owner;
+    address public owner;
 
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 

@@ -1,19 +1,19 @@
 import { ExecutorContext } from '@nrwl/devkit';
-import { BuildExecutorSchema } from './schema';
+import { CleanExecutorSchema } from './schema';
 import { getProjectRoot, getWorkspaceRoot } from '../../utils';
 import { runHardhatCommand } from '../../hardhat-utils';
 
 export default async function runExecutor(
-  options: BuildExecutorSchema,
+  options: CleanExecutorSchema,
   context: ExecutorContext
 ) {
-  console.log('Executor ran for Build', options);
+  console.log('Executor ran for Clean', options);
 
   const workspaceRoot = getWorkspaceRoot(context);
   const projectRoot = getProjectRoot(context);
 
   try {
-    runHardhatCommand(workspaceRoot, projectRoot, 'compile');
+    runHardhatCommand(workspaceRoot, projectRoot, 'clean');
     return { success: true };
   } catch (e) {
     return { success: false };
