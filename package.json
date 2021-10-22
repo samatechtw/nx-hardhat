@@ -1,7 +1,7 @@
 {
   "name": "nx-hardhat",
   "description": "NX Plugin for generating Hardhat based Ethereum smart contract apps",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "nx": "nx",
