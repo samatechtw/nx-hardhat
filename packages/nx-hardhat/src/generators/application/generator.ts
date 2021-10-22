@@ -102,6 +102,9 @@ export default async function (host: Tree, options: AppGeneratorSchema) {
     projectType: 'application',
     sourceRoot: joinPathFragments(projectRoot, 'src'),
     targets: {
+      build: {
+        executor: 'nx-hardhat:build',
+      },
       test: {
         executor: 'nx-hardhat:test',
         outputs: [joinPathFragments('coverage', projectRoot)],

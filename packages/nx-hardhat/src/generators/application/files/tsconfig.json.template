@@ -2,6 +2,11 @@
   "extends": "<%= offsetFromRoot %>tsconfig.base.json",
   "files": [],
   "include": [],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "es2018",
+    "module": "commonjs"
+  },
   "references": [
     {
       "path": "./tsconfig.app.json"
