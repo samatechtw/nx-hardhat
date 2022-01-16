@@ -9,5 +9,6 @@ cache
 logs
 *.zip
 
+typechain/
 log
 *.env
